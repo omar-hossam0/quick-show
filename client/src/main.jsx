@@ -6,17 +6,24 @@ import { BrowserRouter } from 'react-router-dom'
 import { ClerkProvider } from '@clerk/clerk-react'
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
-if (!PUBLISHABLE_KEY) {
-  throw new Error('Missing Publishable Key')
-}
-
-
-createRoot(document.getElementById('root')).render(
+const RootApp = (
   <StrictMode>
-    <ClerkProvider publishableKey={ PUBLISHABLE_KEY }>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-    </ClerkProvider>
   </StrictMode>
+)
+
+createRoot(document.getElementById('root')).render(
+  PUBLISHABLE_KEY ? (
+    <StrictMode>
+      <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ClerkProvider>
+    </StrictMode>
+  ) : (
+    RootApp
+  )
 )

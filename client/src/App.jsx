@@ -9,7 +9,7 @@ import Movies from "./pages/Movies"
 import MyBookings from "./pages/MyBookings"
 import SeatLayout from "./pages/SeatLayout"
 import ListShows from './pages/Admin/ListShows'
-import AdminSideBar from './components/admin/AdminSideBar'
+import AdminSideBar from './components/admin/AdminSidebar'
 import AddShows from './pages/Admin/AddShows'
 import Dashboard from './pages/Admin/Dashboard'
 import Layout from './pages/Admin/Layout'

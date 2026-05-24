@@ -8,6 +8,7 @@
     "dev": "npm --workspace client run dev",
     "build": "npm --workspace client run build",
     "lint": "npm --workspace client run lint",
-    "preview": "npm --workspace client run preview"
+    "preview": "npm --workspace client run preview",
+    "start": "npm --workspace client run preview -- --host 0.0.0.0 --port $PORT"
   }
 }

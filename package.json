@@ -1,0 +1,13 @@
+{
+  "name": "quick-show",
+  "private": true,
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm --workspace client run dev",
+    "build": "npm --workspace client run build",
+    "lint": "npm --workspace client run lint",
+    "preview": "npm --workspace client run preview"
+  }
+}

@@ -9,13 +9,12 @@ LABEL fly_launch_runtime="Node.js"
 # Node.js app lives here
 WORKDIR /app
 
+# Set production environment
+ENV NODE_ENV="production"
 
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
-
-# Build in development mode so devDependencies (Vite plugins) are installed
-ENV NODE_ENV="development"
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
@@ -35,9 +34,6 @@ RUN npm run build
 
 # Final stage for app image
 FROM base
-
-# Run final image in production mode
-ENV NODE_ENV="production"
 
 # Copy built application
 COPY --from=build /app /app
